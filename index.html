@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Readiness Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>SOC 2 Type II Readiness Checklist</h1>
+            <p>
+                Track common recurring activities used to prepare for a SOC 2 Type II audit.
+            </p>
+        </header>
+
+        <section class="score-card">
+            <h2>Readiness Score</h2>
+
+            <div class="score-row">
+                <div id="score">0%</div>
+
+                <div class="score-details">
+                    <span id="completed-count">0 of 0 activities complete</span>
+                    <span id="readiness-message">Start checking off completed activities.</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </section>
+
+        <section id="checklist"></section>
+
+        <footer>
+            <p>
+                Educational project. Checklist requirements vary by organization,
+                system scope, auditor, and applicable Trust Services Criteria.
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
