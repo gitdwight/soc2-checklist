@@ -9,14 +9,34 @@
 
 <body>
 
-    <main class="container">
+        <main class="container">
 
-        <header>
-            <h1>SOC 2 Type II Readiness Checklist</h1>
-            <p>
-                Track common recurring activities used to prepare for a SOC 2 Type II audit.
-            </p>
-        </header>
+            <header>
+                <h1>SOC 2 Type II Readiness Checklist</h1>
+                <p>
+                    Track common recurring activities used to prepare for a SOC 2 Type II audit.
+                </p>
+            </header>
+
+    <section class="report-details">
+        <div class="form-field">
+            <label for="organization">Organization</label>
+            <input
+                type="text"
+                id="organization"
+                placeholder="Organization name"
+            >
+        </div>
+
+        <div class="form-field">
+            <label for="prepared-by">Prepared By</label>
+            <input
+                type="text"
+                id="prepared-by"
+                placeholder="Your name"
+            >
+        </div>
+    </section>
 
         <section class="score-card">
             <h2>Readiness Score</h2>
@@ -36,6 +56,12 @@
         </section>
 
         <section id="checklist"></section>
+
+        <section class="actions">
+            <button id="print-button">
+                Print / Save as PDF
+            </button>
+        </section>
 
         <footer>
             <p>

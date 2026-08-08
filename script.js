@@ -1,118 +1,133 @@
 const checklistItems = [
     {
         category: "Governance",
+        title: "Scope & System Description Review",
+        cadence: "Annual"
+    },
+    {
+        category: "Governance",
         title: "Annual Risk Assessment",
-        cadence: "Annual",
-        control: "CC3.2"
+        cadence: "Annual"
     },
     {
         category: "Governance",
         title: "Annual Policy Review",
-        cadence: "Annual",
-        control: "CC2.1"
+        cadence: "Annual"
     },
     {
         category: "Governance",
-        title: "Security Awareness Training",
-        cadence: "Annual",
-        control: "CC2.2"
+        title: "Security Awareness Training (including Role Based)",
+        cadence: "Annual"
+    },
+    {
+        category: "Governance",
+        title: "BoD / Management Review",
+        cadence: "Annual"
     },
 
     {
         category: "Access Management",
-        title: "User Access Review",
-        cadence: "Quarterly",
-        control: "CC6.2"
+        title: "Annual User Access Review",
+        cadence: "Annual"
     },
     {
         category: "Access Management",
-        title: "Privileged Access Review",
-        cadence: "Quarterly",
-        control: "CC6.2"
+        title: "Quarterly Privileged Access Review",
+        cadence: "Quarterly"
     },
     {
         category: "Access Management",
-        title: "Terminated User Access Review",
-        cadence: "Ongoing",
-        control: "CC6.3"
+        title: "On/Off Boarding Checklist",
+        cadence: "Ongoing"
+    },
+    {
+        category: "Access Management",
+        title: "NDA, Background Checks, & Performance Reviews",
+        cadence: "Ongoing"
+    },
+    {
+        category: "Access Management",
+        title: "Staff & Contractor Policy Acknowledgement",
+        cadence: "Annual"
     },
 
     {
         category: "Security Testing",
-        title: "External Penetration Test",
-        cadence: "Annual",
-        control: "CC7.1"
+        title: "Annual External Penetration Test",
+        cadence: "Annual"
     },
     {
         category: "Security Testing",
-        title: "Vulnerability Scanning",
-        cadence: "Recurring",
-        control: "CC7.1"
+        title: "Vulnerability Scanning & Remediation Review",
+        cadence: "Recurring"
     },
     {
         category: "Security Testing",
-        title: "Vulnerability Remediation Review",
-        cadence: "Recurring",
-        control: "CC7.2"
+        title: "Annual Critical Vendor Risk Reviews",
+        cadence: "Annual"
     },
 
     {
         category: "Incident Response",
-        title: "Incident Response Plan Review",
-        cadence: "Annual",
-        control: "CC7.4"
+        title: "Annual Incident Response Tabletop Exercise",
+        cadence: "Annual"
     },
     {
         category: "Incident Response",
-        title: "Incident Response Tabletop Exercise",
-        cadence: "Annual",
-        control: "CC7.4"
-    },
-
-    {
-        category: "Business Continuity",
-        title: "Business Continuity / Disaster Recovery Test",
-        cadence: "Annual",
-        control: "A1.2"
+        title: "Annual Business Continuity / Disaster Recovery Test",
+        cadence: "Annual"
     },
     {
-        category: "Business Continuity",
-        title: "Backup Restoration Test",
-        cadence: "Annual",
-        control: "A1.2"
-    },
-
-    {
-        category: "Vendor Management",
-        title: "Critical Vendor Risk Reviews",
-        cadence: "Annual",
-        control: "CC9.2"
-    },
-    {
-        category: "Vendor Management",
-        title: "Vendor Inventory Review",
-        cadence: "Annual",
-        control: "CC9.2"
-    },
-
-    {
-        category: "Change Management",
-        title: "Production Change Review",
-        cadence: "Recurring",
-        control: "CC8.1"
+        category: "Incident Response",
+        title: "Annual Backup Restoration Test",
+        cadence: "Annual"
     },
 
     {
         category: "Monitoring",
-        title: "Security Alert Review",
-        cadence: "Recurring",
-        control: "CC7.2"
+        title: "Recurring Security Alert Review",
+        cadence: "Recurring"
     },
     {
         category: "Monitoring",
-        title: "Logging and Monitoring Review",
-        cadence: "Recurring",
-        control: "CC7.2"
+        title: "Recurring Logging and Monitoring Review",
+        cadence: "Recurring"
+    },
+    {
+        category: "Monitoring",
+        title: "Recurring Production Change Management Review",
+        cadence: "Recurring"
+    },
+
+    {
+        category: "Key Documents",
+        title: "Organizational Chart",
+        cadence: "Current"
+    },
+    {
+        category: "Key Documents",
+        title: "Data Flow & Network Diagrams",
+        cadence: "Current"
+    },
+    {
+        category: "Key Documents",
+        title: "Risk Register",
+        cadence: "Current"
+    },
+    {
+        category: "Key Documents",
+        title: "Asset Inventory",
+        cadence: "Current"
+    },
+    {
+        category: "Key Documents",
+        title: "Threat Intelligence Feeds",
+        cadence: "Current"
+    },
+    {
+        category: "Key Documents",
+        title: "Vendor Inventory",
+        cadence: "Current"
     }
 ];
 
@@ -225,3 +240,9 @@ function updateScore() {
 
 renderChecklist();
 updateScore();
+
+const printButton = document.getElementById("print-button");
+
+printButton.addEventListener("click", () => {
+    window.print();
+});

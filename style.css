@@ -113,6 +113,64 @@ header p {
     }
 }
 
+.report-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-field input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.form-field input:focus {
+    outline: 1px solid var(--accent);
+    border-color: var(--accent);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+#print-button {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#print-button:hover {
+    background: var(--accent-light);
+}
+
+@media (max-width: 600px) {
+    .report-details {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Progress bar */
 
 .progress-bar {
@@ -242,5 +300,69 @@ footer {
     .category,
     .score-card {
         padding: 18px;
+    }
+}
+
+@media print {
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    header h1 {
+        color: black;
+    }
+
+    header p,
+    .score-card h2,
+    .checklist-item span,
+    footer {
+        color: #555;
+    }
+
+    .score-card,
+    .category {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .checklist-item strong {
+        color: black;
+    }
+
+    .checklist-item:has(input:checked) strong {
+        color: #555;
+    }
+
+    .report-details input {
+        background: white;
+        color: black;
+        border: none;
+        border-bottom: 1px solid #999;
+        border-radius: 0;
+    }
+
+    .form-field label {
+        color: #555;
+    }
+
+    .actions {
+        display: none;
+    }
+
+    .progress-bar {
+        border: 1px solid #999;
+    }
+
+    #progress {
+        background: #555;
     }
 }
