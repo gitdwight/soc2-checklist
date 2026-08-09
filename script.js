@@ -183,9 +183,7 @@ function renderChecklist() {
 
             details.innerHTML = `
                 <strong>${item.title}</strong>
-                <span>
-                    ${item.cadence} · ${item.control}
-                </span>
+                <span>${item.cadence}</span>
             `;
 
             row.appendChild(checkbox);
@@ -241,8 +239,60 @@ function updateScore() {
 renderChecklist();
 updateScore();
 
+// persist org and name details
+
+const organizationInput = document.getElementById("organization");
+const preparedByInput = document.getElementById("prepared-by");
+
+organizationInput.value =
+    localStorage.getItem("soc2-organization") || "";
+
+preparedByInput.value =
+    localStorage.getItem("soc2-prepared-by") || "";
+
+organizationInput.addEventListener("input", () => {
+    localStorage.setItem(
+        "soc2-organization",
+        organizationInput.value
+    );
+});
+
+preparedByInput.addEventListener("input", () => {
+    localStorage.setItem(
+        "soc2-prepared-by",
+        preparedByInput.value
+    );
+});
+
+// print and reset buttons
+
 const printButton = document.getElementById("print-button");
 
 printButton.addEventListener("click", () => {
     window.print();
+});
+
+const resetButton = document.getElementById("reset-button");
+
+resetButton.addEventListener("click", () => {
+    const confirmed = window.confirm(
+        "Reset the checklist and clear all entered information?"
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    localStorage.clear();
+
+    document
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+    document.getElementById("organization").value = "";
+    document.getElementById("prepared-by").value = "";
+
+    updateScore();
 });

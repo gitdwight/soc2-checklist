@@ -149,6 +149,7 @@ header p {
 .actions {
     display: flex;
     justify-content: flex-end;
+    gap: 12px;
     margin-bottom: 24px;
 }
 
@@ -163,6 +164,20 @@ header p {
 
 #print-button:hover {
     background: var(--accent-light);
+}
+
+.secondary-button {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: var(--surface-hover);
 }
 
 @media (max-width: 600px) {
