@@ -349,9 +349,10 @@ footer {
 
 @media print {
 
+    /* Chrome: use Margins "None" for edge-to-edge dark background */
     @page {
         size: letter;
-        margin: 0.6in;
+        margin: 0;
     }
 
     html,
@@ -367,9 +368,24 @@ footer {
         print-color-adjust: exact;
     }
 
+    html,
     body {
         background: var(--bg);
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+
+    body {
         color: var(--text);
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        z-index: -1;
     }
 
     .screen-only {
@@ -381,8 +397,12 @@ footer {
     }
 
     .container {
-        max-width: 900px;
-        padding: 0;
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 0.6in 0.75in;
+        background: var(--bg);
+        box-sizing: border-box;
     }
 
     header {
