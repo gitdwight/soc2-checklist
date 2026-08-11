@@ -18,6 +18,11 @@
                 </p>
             </header>
 
+            <section class="print-only print-report-meta" aria-hidden="true">
+                <h2>Readiness Assessment Report</h2>
+                <p>Generated <span id="print-date"></span></p>
+            </section>
+
     <section class="report-details">
         <div class="form-field">
             <label for="organization">Organization</label>
@@ -68,9 +73,14 @@
         </section>
 
         <footer>
-            <p>
+            <p class="screen-only">
                 Educational project. Checklist requirements vary by organization,
                 system scope, auditor, and applicable Trust Services Criteria.
+            </p>
+            <p class="print-only print-footer">
+                Internal readiness assessment. Requirements vary by organization,
+                system scope, auditor, and applicable Trust Services Criteria.
+                Generated <span id="print-date-footer"></span>.
             </p>
         </footer>
 

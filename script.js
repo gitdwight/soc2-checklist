@@ -267,6 +267,31 @@ preparedByInput.addEventListener("input", () => {
 // print and reset buttons
 
 const printButton = document.getElementById("print-button");
+const defaultDocumentTitle = document.title;
+
+function formatPrintDate() {
+    return new Date().toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
+
+window.addEventListener("beforeprint", () => {
+    const formattedDate = formatPrintDate();
+
+    document.getElementById("print-date").textContent = formattedDate;
+    document.getElementById("print-date-footer").textContent = formattedDate;
+
+    const organization = organizationInput.value.trim();
+    if (organization) {
+        document.title = `${organization} — SOC 2 Readiness Report`;
+    }
+});
+
+window.addEventListener("afterprint", () => {
+    document.title = defaultDocumentTitle;
+});
 
 printButton.addEventListener("click", () => {
     window.print();
